@@ -1,6 +1,10 @@
-export default function TypeWriterHeader({ text }: { text: string }) {
-  const typingDuration = 1.5; // seconds
-
+export default function TypeWriterHeader({
+  text,
+  typingDuration = 1.5,
+}: {
+  text: string;
+  typingDuration?: number;
+}) {
   return (
     <div className="inline-block">
       <h1
