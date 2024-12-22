@@ -8,9 +8,21 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      keyframes: {
+        borderBlink: {
+          "50%": { borderColor: "transparent" },
+        },
+        typing: {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
+        },
+      },
+      animation: {
+        // Typing animation runs first; borderBlink starts after typing is complete
+        typewriter: `
+          typing var(--typing-duration, 2s) steps(var(--character-count, 10)) forwards,
+          borderBlink 0.5s step-end infinite alternate var(--typing-duration, 2s)
+        `,
       },
     },
   },
