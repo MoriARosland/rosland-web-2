@@ -1,10 +1,12 @@
+interface TypeWriterHeaderProps {
+  text: string;
+  typingDuration?: number;
+}
+
 export default function TypeWriterHeader({
   text,
   typingDuration = 1.5,
-}: {
-  text: string;
-  typingDuration?: number;
-}) {
+}: TypeWriterHeaderProps) {
   return (
     <div className="inline-block">
       <h1

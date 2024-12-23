@@ -1,11 +1,11 @@
 import LinkButton from "./LinkButton";
 import { IconType } from "react-icons";
 
-export default function LinkButtonRow({
-  links,
-}: {
+interface LinkButtonRowProps {
   links: { icon: IconType; url: string }[];
-}) {
+}
+
+export default function LinkButtonRow({ links }: LinkButtonRowProps) {
   return (
     <div className="flex flex-row gap-4">
       {links.map((link, index) => (

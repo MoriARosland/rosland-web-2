@@ -1,13 +1,12 @@
 import Link from "next/link";
 import { IconType } from "react-icons";
 
-export default function LinkButton({
-  icon: Icon,
-  url,
-}: {
+interface LinkButtonProps {
   icon: IconType;
   url: string;
-}) {
+}
+
+export default function LinkButton({ icon: Icon, url }: LinkButtonProps) {
   return (
     <Link href={url} prefetch={false}>
       <Icon
