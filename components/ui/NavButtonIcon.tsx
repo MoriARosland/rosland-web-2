@@ -15,10 +15,10 @@ export default function NavButtonIcon({
   return (
     <Link
       href={href}
-      className="inline-flex flex-row gap-2 items-center text-lg text-black dark:text-white px-4 py-2 rounded-md hover:text-blue-500 transition duration-200"
+      className="inline-flex flex-row gap-2 justify-center items-center text-black dark:text-white px-4 py-2 rounded-md hover:text-blue-500 transition duration-200"
     >
-      <Icon size={18} />
-      <p className="text-lg">{text}</p>
+      <Icon size={14} />
+      <p className="text-md">{text}</p>
     </Link>
   );
 }
