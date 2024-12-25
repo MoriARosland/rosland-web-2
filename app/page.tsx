@@ -1,6 +1,6 @@
 import TypeWriterHeader from "@/components/TypeWriterHeader";
-import LinkButtonRow from "@/components/ui/LinkButtonRow";
-import NavButton from "@/components/ui/NavButton";
+import LinkButtonRow from "@/components/ui/buttons/LinkButtonRow";
+import NavButton from "@/components/ui/buttons/NavButton";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Home() {

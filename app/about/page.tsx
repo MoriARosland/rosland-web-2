@@ -1,4 +1,4 @@
-import NavButtonIcon from "@/components/ui/NavButtonIcon";
+import NavButtonIcon from "@/components/ui/buttons/NavButtonIcon";
 import { FaArrowLeft } from "react-icons/fa";
 
 export default function About() {
