@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Titillium_Web } from "next/font/google";
 import "./globals.css";
+import AuthProvider from "@/components/services/AuthProvider";
 
 const titillium = Titillium_Web({
   subsets: ["latin"],
@@ -27,8 +28,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${titillium.className} antialiased`}>{children}</body>
-    </html>
+    <AuthProvider>
+      <html lang="en">
+        <body className={`${titillium.className} antialiased`}>{children}</body>
+      </html>
+    </AuthProvider>
   );
 }
