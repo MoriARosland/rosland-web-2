@@ -1,12 +1,11 @@
 import Link from "next/link";
 
-export default function NavButton({
-  text,
-  href,
-}: {
+interface NavButtonProps {
   text: string;
   href: string;
-}) {
+}
+
+export default function NavButton({ text, href }: NavButtonProps) {
   return (
     <Link
       href={href}
