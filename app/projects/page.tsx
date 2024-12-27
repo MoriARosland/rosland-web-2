@@ -39,14 +39,3 @@ export default async function Projects() {
     </main>
   );
 }
-
-{
-  /* <div className="flex my-4">
-<div className="flex">
-  <NavButtonIcon icon={FaArrowLeft} href="/" text="Back" />
-</div>
-<div className="flex grow justify-center">
-  <h1 className="text-4xl font-bold text-center">Projects</h1>
-</div>
-</div> */
-}
