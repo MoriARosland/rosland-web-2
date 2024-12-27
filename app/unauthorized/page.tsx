@@ -1,6 +1,14 @@
 import Link from "next/link";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 
-export default function Unauthorized() {
+export default async function Unauthorized() {
+  const session = await getServerSession();
+
+  if (!session) {
+    redirect("/");
+  }
+
   return (
     <main className="flex flex-col gap-4 h-screen w-full items-center justify-center">
       <h1 className="text-2xl font-bold">
