@@ -18,5 +18,7 @@ export function SignInButton() {
 }
 
 export function SignOutButton() {
-  return <button onClick={() => signOut()}>Sign Out</button>;
+  return (
+    <button onClick={() => signOut({ callbackUrl: "/" })}>Sign Out</button>
+  );
 }
