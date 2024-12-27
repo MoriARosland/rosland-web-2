@@ -15,15 +15,11 @@ export default async function Projects() {
   ).then((res) => res.json());
 
   return (
-    <main>
-      {/* Parent container uses relative so children can be positioned absolutely */}
+    <main className="flex flex-col">
       <div className="relative flex items-center justify-center py-4">
-        {/* Position the nav button absolutely on the left */}
         <div className="absolute left-0 px-4">
           <NavButtonIcon icon={FaArrowLeft} href="/" text="Back" />
         </div>
-
-        {/* Heading remains centered in the flex container */}
         <h1 className="text-4xl font-bold text-center">Projects</h1>
       </div>
       <div className="flex flex-wrap gap-6 items-center justify-center">
