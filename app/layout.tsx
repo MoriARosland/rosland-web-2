@@ -28,10 +28,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <AuthProvider>
-      <html lang="en">
-        <body className={`${titillium.className} antialiased`}>{children}</body>
-      </html>
-    </AuthProvider>
+    <html lang="en">
+      <body className={`${titillium.className} antialiased`}>
+        <AuthProvider>{children}</AuthProvider>
+      </body>
+    </html>
   );
 }
