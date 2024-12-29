@@ -1,7 +1,7 @@
 import Form from "next/form";
 import clientPromise from "@/lib/mongodb";
 
-export default function ProjectForm() {
+export default async function ProjectForm() {
   async function handleFormSubmit(formData: FormData) {
     "use server";
 
