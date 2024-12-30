@@ -1,6 +1,8 @@
 import NexusNavbar from "@/components/ui/navigation/NexusNavbar";
 import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 interface Props {
   children: React.ReactNode;
@@ -20,7 +22,7 @@ export default async function NexusLayout({ children }: Props) {
   return (
     <>
       <NexusNavbar />
-      {children}
+      <Suspense fallback={<Loading />}>{children}</Suspense>
     </>
   );
 }
