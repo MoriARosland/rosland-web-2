@@ -14,6 +14,7 @@ export default async function ProjectForm() {
     const client = await clientPromise;
     const db = client.db(process.env.DATABASE_NAME);
 
+    // TODO: This should be a POST request
     const project = await db.collection("projects").insertOne(projectData);
 
     console.log(project);
