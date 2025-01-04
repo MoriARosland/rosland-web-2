@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+
 interface CardProps {
   id: string;
-  header: string;
-  description: string;
+  title: string;
+  abstract: string;
   tag: string;
 }
 
-export default function Card({ id, header, description, tag }: CardProps) {
+export default function Card({ id, title, abstract, tag }: CardProps) {
   return (
     <Link
       href={`/projects/${id}`}
@@ -21,14 +22,14 @@ export default function Card({ id, header, description, tag }: CardProps) {
             ? "/asic.jpg"
             : "/arcane.jpeg"
         }
-        alt={header}
+        alt={title}
         fill={true}
         className="object-cover opacity-80"
       />
       <div className="absolute inset-0 bg-black/50" /> {/* Overlay */}
       <div className="relative z-10 p-4 h-full flex flex-col justify-end">
-        <h2 className="text-xl font-bold text-white mb-2">{header}</h2>
-        <p className="text-white/90">{description}</p>
+        <h2 className="text-xl font-bold text-white mb-2">{title}</h2>
+        <p className="text-white/90">{abstract}</p>
       </div>
     </Link>
   );

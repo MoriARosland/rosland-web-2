@@ -44,7 +44,14 @@ export default async function ProjectPage({ params }: Props) {
       </div>
       <div className="flex flex-col gap-4 px-20">
         <h1 className="text-3xl font-bold">{project.title}</h1>
-        <p className="text-lg">{project.description}</p>
+        <p className="font-bold">Tech: {project.techStack?.join(", ")}</p>
+        <div className="text-base space-y-4">
+          {project.description
+            .split(/\n\r?/)
+            .map((line: string, index: number) => (
+              <p key={index}>{line}</p>
+            ))}
+        </div>
       </div>
     </main>
   );

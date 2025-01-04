@@ -23,12 +23,35 @@ export default function TableItem({ project }: TableItemProps) {
       >
         <td className="border px-4 py-2 font-mono text-sm">{project._id}</td>
         <td className="border px-4 py-2 font-medium">{project.title}</td>
+        <td className="border px-4 py-2">{project.abstract}</td>
         <td className="border px-4 py-2">{project.description}</td>
         <td className="border px-4 py-2">
           <div className="flex flex-wrap gap-1">
             <span className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
               {project.tag}
             </span>
+          </div>
+        </td>
+        <td className="border px-4 py-2">
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:underline"
+          >
+            {project.github}
+          </a>
+        </td>
+        <td className="border px-4 py-2">
+          <div className="flex flex-wrap gap-1">
+            {project.techStack?.map((tech, index) => (
+              <span
+                key={index}
+                className="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded"
+              >
+                {tech}
+              </span>
+            )) || "No tech stack specified"}
           </div>
         </td>
       </tr>

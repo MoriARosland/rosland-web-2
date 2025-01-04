@@ -1,12 +1,6 @@
+import { Project } from "@/lib/types/project";
 import TableHead from "./TableHead";
 import TableItem from "./TableItem";
-
-interface Project {
-  _id: string;
-  title: string;
-  description: string;
-  tag: string;
-}
 
 export default async function ProjectTable() {
   const projects: Project[] = await fetch(
