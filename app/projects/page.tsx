@@ -2,6 +2,8 @@ import Card from "@/components/ui/cards/Card";
 import { Project } from "@/lib/types/project";
 import { BASE_API_URL } from "@/lib/utils/constants";
 
+export const dynamic = "force-dynamic";
+
 export default async function Projects() {
   let projects: Project[] = [];
 
