@@ -1,18 +1,17 @@
 import LinkButton from "@/components/ui/buttons/LinkButton";
 import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
+import { BASE_API_URL } from "@/lib/utils/constants";
 
-interface Props {
-  params: {
-    id: string;
-  };
-}
-
-export default async function ProjectPage({ params }: Props) {
+export default async function ProjectPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   const id = (await params).id;
 
   const response = await fetch(
-    `http://localhost:3000/api/projects/getOne?query=${id}`
+    `${BASE_API_URL}/api/projects/getOne?query=${id}`
   );
 
   if (!response.ok) {
@@ -43,6 +42,23 @@ export default async function ProjectPage({ params }: Props) {
       </div>
       <div className="flex flex-col gap-4 px-20">
         <h1 className="text-3xl font-bold">{project.title}</h1>
+        <div className="flex flex-row items-center gap-4">
+          <div className="flex">
+            <LinkButton
+              icon={FaGithub}
+              url={project.github}
+              disabled={!project.github}
+            />
+          </div>
+          <p className="font-bold">Tech: {project.techStack?.join(", ")}</p>
+        </div>
+        <div className="text-base space-y-4">
+          {project.description
+            .split(/\n\r?/)
+            .map((line: string, index: number) => (
+              <p key={index}>{line}</p>
+            ))}
+        </div>
         <div className="flex flex-row items-center gap-4">
           <div className="flex">
             <LinkButton
