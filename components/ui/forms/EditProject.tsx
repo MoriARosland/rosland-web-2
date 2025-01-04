@@ -29,11 +29,9 @@ export default function EditProject({ project }: Props) {
 
     const id = new ObjectId(project._id);
 
-    const updatedProject = await db
+    await db
       .collection("projects")
       .updateOne({ _id: new ObjectId(id) }, { $set: projectData });
-
-    console.log("Updated Project: ", updatedProject);
   }
 
   return (

@@ -16,8 +16,6 @@ export default async function ProjectPage({ params }: Props) {
   );
 
   if (!response.ok) {
-    const { error } = await response.json();
-    console.log("Error: ", error);
     return (
       <main className="flex flex-col items-center px-20 py-5">
         <h1 className="text-3xl font-bold">Project not found</h1>
@@ -26,7 +24,6 @@ export default async function ProjectPage({ params }: Props) {
   }
 
   const { project } = await response.json();
-  console.log("Project: ", project);
 
   return (
     <main className="flex flex-col w-full gap-10">
