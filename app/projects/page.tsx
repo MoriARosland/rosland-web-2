@@ -2,14 +2,6 @@ import Card from "@/components/ui/cards/Card";
 import { Project } from "@/lib/types/project";
 import { BASE_API_URL } from "@/lib/utils/constants";
 
-// export async function generateStaticParams() {
-//   const projects: Project[] = await fetch(
-//     "http://localhost:3000/api/projects"
-//   ).then((res) => res.json());
-
-//   return projects.map((project) => ({ id: project._id }));
-// }
-
 export default async function Projects() {
   let projects: Project[] = [];
 
