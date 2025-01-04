@@ -1,6 +1,7 @@
 import LinkButton from "@/components/ui/buttons/LinkButton";
 import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
+import { BASE_API_URL } from "@/lib/utils/constants";
 
 export default async function ProjectPage({
   params,
@@ -10,7 +11,7 @@ export default async function ProjectPage({
   const id = (await params).id;
 
   const response = await fetch(
-    `http://localhost:3000/api/projects/getOne?query=${id}`
+    `${BASE_API_URL}/api/projects/getOne?query=${id}`
   );
 
   if (!response.ok) {
