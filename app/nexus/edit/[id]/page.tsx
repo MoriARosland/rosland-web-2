@@ -1,12 +1,10 @@
 import EditProject from "@/components/ui/forms/EditProject";
 
-interface Props {
-  params: {
-    id: string;
-  };
-}
-
-export default async function EditProjectPage({ params }: Props) {
+export default async function EditProjectPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
   const id = (await params).id;
 
   const response = await fetch(
