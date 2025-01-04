@@ -1,4 +1,6 @@
+import LinkButton from "@/components/ui/buttons/LinkButton";
 import Image from "next/image";
+import { FaGithub } from "react-icons/fa";
 
 interface Props {
   params: {
@@ -14,8 +16,6 @@ export default async function ProjectPage({ params }: Props) {
   );
 
   if (!response.ok) {
-    const { error } = await response.json();
-    console.log("Error: ", error);
     return (
       <main className="flex flex-col items-center px-20 py-5">
         <h1 className="text-3xl font-bold">Project not found</h1>
@@ -24,7 +24,6 @@ export default async function ProjectPage({ params }: Props) {
   }
 
   const { project } = await response.json();
-  console.log("Project: ", project);
 
   return (
     <main className="flex flex-col w-full gap-10">
@@ -44,7 +43,23 @@ export default async function ProjectPage({ params }: Props) {
       </div>
       <div className="flex flex-col gap-4 px-20">
         <h1 className="text-3xl font-bold">{project.title}</h1>
-        <p className="text-lg">{project.description}</p>
+        <div className="flex flex-row items-center gap-4">
+          <div className="flex">
+            <LinkButton
+              icon={FaGithub}
+              url={project.github}
+              disabled={!project.github}
+            />
+          </div>
+          <p className="font-bold">Tech: {project.techStack?.join(", ")}</p>
+        </div>
+        <div className="text-base space-y-4">
+          {project.description
+            .split(/\n\r?/)
+            .map((line: string, index: number) => (
+              <p key={index}>{line}</p>
+            ))}
+        </div>
       </div>
     </main>
   );

@@ -1,11 +1,5 @@
 import Card from "@/components/ui/cards/Card";
-
-interface Project {
-  _id: string;
-  title: string;
-  description: string;
-  tag: string;
-}
+import { Project } from "@/lib/types/project";
 
 export default async function Projects() {
   const projects: Project[] = await fetch(
@@ -21,8 +15,8 @@ export default async function Projects() {
           <Card
             id={project._id}
             key={project._id}
-            header={project.title}
-            description={project.description}
+            title={project.title}
+            abstract={project.abstract}
             tag={project.tag}
           />
         ))}

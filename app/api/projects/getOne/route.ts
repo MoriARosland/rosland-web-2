@@ -16,8 +16,6 @@ export async function GET(request: NextRequest) {
       _id: objectId,
     });
 
-    console.log("From route: ", project);
-
     return NextResponse.json({ project });
   } catch (error) {
     console.error("Project fetch failed:", error);
