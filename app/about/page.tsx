@@ -38,6 +38,22 @@ export default function About() {
             I will never say no to a competition 😈 — sports or otherwise 🚀.
           </p>
         </div>
+        <div>
+          <h2 className="text-xl font-bold">Experience / Technical</h2>
+          <p className="text-md">
+            Most of my programming experience is in <strong>C/C++</strong>{" "}
+            writing firmware for embedded systems. Additionally, in my free
+            time, I have completed multiple projects with{" "}
+            <strong>TypeScript</strong> in <strong>React/Next.js</strong> and{" "}
+            <strong>SvelteKit</strong>.
+          </p>
+          <p className="text-md">
+            Hardware-wise, I have a fair share of experience in{" "}
+            <strong>VHDL</strong>/<strong>System Verilog</strong> (digital
+            design) and some PCB design in <strong>KiCad</strong> and{" "}
+            <strong>Altium</strong>.
+          </p>
+        </div>
       </div>
       <div className="flex flex-wrap gap-10 py-10">
         <Image
