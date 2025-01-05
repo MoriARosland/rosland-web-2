@@ -2,6 +2,7 @@ import { Project } from "@/lib/types/project";
 import clientPromise from "@/lib/mongodb";
 import Form from "next/form";
 import { ObjectId } from "mongodb";
+import { revalidatePath } from "next/cache";
 
 interface Props {
   project: Project;
@@ -32,6 +33,9 @@ export default function EditProject({ project }: Props) {
     await db
       .collection("projects")
       .updateOne({ _id: new ObjectId(id) }, { $set: projectData });
+
+    revalidatePath("/projects");
+    revalidatePath("/nexus/projects");
   }
 
   return (
