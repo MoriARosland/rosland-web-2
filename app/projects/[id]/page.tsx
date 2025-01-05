@@ -59,23 +59,6 @@ export default async function ProjectPage({
               <p key={index}>{line}</p>
             ))}
         </div>
-        <div className="flex flex-row items-center gap-4">
-          <div className="flex">
-            <LinkButton
-              icon={FaGithub}
-              url={project.github}
-              disabled={!project.github}
-            />
-          </div>
-          <p className="font-bold">Tech: {project.techStack?.join(", ")}</p>
-        </div>
-        <div className="text-base space-y-4">
-          {project.description
-            .split(/\n\r?/)
-            .map((line: string, index: number) => (
-              <p key={index}>{line}</p>
-            ))}
-        </div>
       </div>
     </main>
   );
