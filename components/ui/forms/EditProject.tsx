@@ -2,6 +2,9 @@ import { Project } from "@/lib/types/project";
 import clientPromise from "@/lib/mongodb";
 import Form from "next/form";
 import { ObjectId } from "mongodb";
+import { revalidateTag } from "next/cache";
+import { deleteProject } from "@/lib/db/db_actions";
+import { redirect } from "next/navigation";
 
 interface Props {
   project: Project;
@@ -32,6 +35,17 @@ export default function EditProject({ project }: Props) {
     await db
       .collection("projects")
       .updateOne({ _id: new ObjectId(id) }, { $set: projectData });
+
+    revalidateTag("projects");
+  }
+
+  async function handleDelete() {
+    "use server";
+    await deleteProject(project._id);
+    console.log("deleted project with id: ", project._id);
+
+    revalidateTag("projects");
+    redirect("/nexus");
   }
 
   return (
@@ -100,9 +114,12 @@ export default function EditProject({ project }: Props) {
           required
         />
       </label>
-      <button className="btn btn-primary mt-4" type="submit">
-        Update
-      </button>
+      <div className="flex flex-row gap-4">
+        <button className="btn btn-primary mt-4">Update</button>
+        <button className="btn btn-error mt-4" formAction={handleDelete}>
+          DELETE
+        </button>
+      </div>
     </Form>
   );
 }

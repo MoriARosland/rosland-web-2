@@ -1,5 +1,7 @@
 import Form from "next/form";
 import clientPromise from "@/lib/mongodb";
+import { revalidateTag } from "next/cache";
+import { redirect } from "next/navigation";
 
 export default async function ProjectForm() {
   async function handleFormSubmit(formData: FormData) {
@@ -22,6 +24,9 @@ export default async function ProjectForm() {
     const db = client.db(process.env.DATABASE_NAME);
 
     await db.collection("projects").insertOne(projectData);
+
+    revalidateTag("projects");
+    redirect("/nexus");
   }
 
   return (
