@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Titillium_Web } from "next/font/google";
 import "./globals.css";
-import AuthProvider from "@/components/services/AuthProvider";
 import NavBarWrapper from "@/components/ui/navigation/NavBarWrapper";
 
 const titillium = Titillium_Web({
@@ -11,8 +10,7 @@ const titillium = Titillium_Web({
 
 export const metadata: Metadata = {
   title: "Rosland Web",
-  description:
-    "Hello there👋 I'm Mori. I'm a software and hardware engineer. Checkout my projects.",
+  description: "🤖",
   icons: {
     icon: [
       {
@@ -31,10 +29,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${titillium.className} antialiased`}>
-        <AuthProvider>
-          <NavBarWrapper />
-          {children}
-        </AuthProvider>
+        <NavBarWrapper />
+        {children}
       </body>
     </html>
   );

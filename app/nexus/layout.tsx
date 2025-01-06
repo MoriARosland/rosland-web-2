@@ -1,28 +1,20 @@
 import NexusNavbar from "@/components/ui/navigation/NexusNavbar";
-import { redirect } from "next/navigation";
-import { getServerSession } from "next-auth";
 import { Suspense } from "react";
 import Loading from "./loading";
+import AuthProvider from "@/components/services/AuthProvider";
+import AuthCheck from "@/components/services/AuthCheck";
 
 interface Props {
   children: React.ReactNode;
 }
 
-export default async function NexusLayout({ children }: Props) {
-  const session = await getServerSession();
-
-  if (!session) {
-    redirect("/api/auth/signin");
-  }
-
-  if (session.user?.email !== process.env.ADMIN_EMAIL) {
-    redirect("/unauthorized");
-  }
-
+export default function NexusLayout({ children }: Props) {
   return (
-    <>
-      <NexusNavbar />
-      <Suspense fallback={<Loading />}>{children}</Suspense>
-    </>
+    <AuthProvider>
+      <AuthCheck>
+        <NexusNavbar />
+        <Suspense fallback={<Loading />}>{children}</Suspense>
+      </AuthCheck>
+    </AuthProvider>
   );
 }

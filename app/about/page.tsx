@@ -34,9 +34,6 @@ export default function About() {
             My interests can be rather quickly summarized: competitive sports,
             programming, and reading. With this, I am a happy human 😌.
           </p>
-          <p>
-            I will never say no to a competition 😈 — sports or otherwise 🚀.
-          </p>
         </div>
         <div>
           <h2 className="text-xl font-bold">Experience / Technical</h2>
@@ -59,18 +56,18 @@ export default function About() {
         <Image
           src="/17mai.jpeg"
           alt="17mai"
-          width={300}
-          height={300}
-          className="object-cover rounded-lg shadow-md shadow-black/25 dark:shadow-white/25"
-          priority
+          width={3024}
+          height={4032}
+          className="w-[300px] h-auto object-cover rounded-lg shadow-md shadow-black/25 dark:shadow-white/25"
+          priority={true}
         />
         <Image
           src="/cycling.jpeg"
           alt="cycling"
-          width={300}
-          height={300}
-          className="object-cover rounded-lg shadow-md shadow-black/25 dark:shadow-white/25"
-          priority
+          width={3024}
+          height={4032}
+          className="w-[300px] h-auto object-cover rounded-lg shadow-md shadow-black/25 dark:shadow-white/25"
+          priority={true}
         />
       </div>
     </main>

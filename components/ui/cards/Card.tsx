@@ -25,6 +25,9 @@ export default function Card({ id, title, abstract, tag }: CardProps) {
         alt={title}
         fill={true}
         className="object-cover opacity-80"
+        sizes="(max-width: 768px) 100vw, 384px"
+        quality={75}
+        priority={true}
       />
       <div className="absolute inset-0 bg-black/50" /> {/* Overlay */}
       <div className="relative z-10 p-4 h-full flex flex-col justify-end">
