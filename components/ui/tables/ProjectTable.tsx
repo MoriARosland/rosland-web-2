@@ -1,12 +1,10 @@
 import { Project } from "@/lib/types/project";
 import TableHead from "./TableHead";
 import TableItem from "./TableItem";
-import { BASE_API_URL } from "@/lib/utils/constants";
+import { getAllProjects } from "@/lib/db/db_actions";
 
 export default async function ProjectTable() {
-  const projects: Project[] = await fetch(`${BASE_API_URL}/api/projects`).then(
-    (res) => res.json()
-  );
+  const projects: Project[] = await getAllProjects();
 
   return (
     <div className="overflow-x-auto">
