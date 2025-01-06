@@ -1,6 +1,7 @@
 import Form from "next/form";
 import clientPromise from "@/lib/mongodb";
-import { revalidatePath } from "next/cache";
+import { revalidateTag } from "next/cache";
+import { redirect } from "next/navigation";
 
 export default async function ProjectForm() {
   async function handleFormSubmit(formData: FormData) {
@@ -24,8 +25,8 @@ export default async function ProjectForm() {
 
     await db.collection("projects").insertOne(projectData);
 
-    revalidatePath("/projects");
-    revalidatePath("/nexus/projects");
+    revalidateTag("projects");
+    redirect("/nexus");
   }
 
   return (
