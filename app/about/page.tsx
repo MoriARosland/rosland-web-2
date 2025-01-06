@@ -34,9 +34,6 @@ export default function About() {
             My interests can be rather quickly summarized: competitive sports,
             programming, and reading. With this, I am a happy human 😌.
           </p>
-          <p>
-            I will never say no to a competition 😈 — sports or otherwise 🚀.
-          </p>
         </div>
         <div>
           <h2 className="text-xl font-bold">Experience / Technical</h2>
