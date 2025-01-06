@@ -59,18 +59,18 @@ export default function About() {
         <Image
           src="/17mai.jpeg"
           alt="17mai"
-          width={300}
-          height={300}
-          className="object-cover rounded-lg shadow-md shadow-black/25 dark:shadow-white/25"
-          priority
+          width={3024}
+          height={4032}
+          className="w-[300px] h-auto object-cover rounded-lg shadow-md shadow-black/25 dark:shadow-white/25"
+          priority={true}
         />
         <Image
           src="/cycling.jpeg"
           alt="cycling"
-          width={300}
-          height={300}
-          className="object-cover rounded-lg shadow-md shadow-black/25 dark:shadow-white/25"
-          priority
+          width={3024}
+          height={4032}
+          className="w-[300px] h-auto object-cover rounded-lg shadow-md shadow-black/25 dark:shadow-white/25"
+          priority={true}
         />
       </div>
     </main>
