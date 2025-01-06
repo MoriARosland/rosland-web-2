@@ -1,4 +1,6 @@
 import Image from "next/image";
+import nasjonaldag from "@/public/nasjonaldag.jpeg";
+import cycling from "@/public/cycling.jpeg";
 
 export default function About() {
   return (
@@ -54,20 +56,23 @@ export default function About() {
       </div>
       <div className="flex flex-wrap gap-10 py-10">
         <Image
-          src="/17mai.jpeg"
-          alt="17mai"
+          src={nasjonaldag}
+          alt="nasjonaldag"
           width={3024}
           height={4032}
-          className="w-[300px] h-auto object-cover rounded-lg shadow-md shadow-black/25 dark:shadow-white/25"
           priority={true}
+          sizes="(max-width: 768px) 100vw, 40vw"
+          className="max-w-[300px] h-auto object-cover rounded-lg shadow-md shadow-black/25 dark:shadow-white/25"
         />
+        {/* Fetch priority set high for the cycling image since it is LCP */}
         <Image
-          src="/cycling.jpeg"
+          src={cycling}
           alt="cycling"
           width={3024}
           height={4032}
-          className="w-[300px] h-auto object-cover rounded-lg shadow-md shadow-black/25 dark:shadow-white/25"
           priority={true}
+          sizes="(max-width: 768px) 100vw, 40vw"
+          className="max-w-[300px] h-auto object-cover rounded-lg shadow-md shadow-black/25 dark:shadow-white/25"
         />
       </div>
     </main>

@@ -25,7 +25,7 @@ export default function Card({ id, title, abstract, tag }: CardProps) {
         alt={title}
         fill={true}
         className="object-cover opacity-80"
-        sizes="(max-width: 768px) 100vw, 384px"
+        sizes="(max-width: 768px) 50vw, 33vw"
         quality={75}
         priority={true}
       />

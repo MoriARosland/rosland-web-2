@@ -42,6 +42,8 @@ export default async function ProjectPage({
           }
           alt={project.title}
           fill={true}
+          sizes="100vw"
+          priority={true}
           className="object-cover w-full"
         />
       </div>
