@@ -30,8 +30,8 @@ export default async function ProjectPage({
   }
 
   return (
-    <main className="flex flex-col w-full gap-10">
-      <div className="relative w-full h-[30vh]">
+    <main className="flex flex-col items-center py-16">
+      <div className="w-full max-w-4xl px-6 md:px-16 flex flex-col gap-14">
         <Image
           src={
             project.tag.toLowerCase() === "software"
@@ -40,31 +40,32 @@ export default async function ProjectPage({
               ? "/asic.jpg"
               : "/arcane.jpeg"
           }
+          height={1024}
+          width={1024}
           alt={project.title}
-          fill={true}
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, 33vw"
           priority={true}
-          className="object-cover w-full"
+          className="w-full object-cover"
         />
-      </div>
-      <div className="flex flex-col gap-4 px-20">
-        <h1 className="text-3xl font-bold">{project.title}</h1>
-        <div className="flex flex-row items-center gap-4">
-          <div className="flex">
-            <LinkButton
-              icon={FaGithub}
-              url={project.github}
-              disabled={!project.github}
-            />
+        <div className="flex flex-col gap-4">
+          <h1 className="text-3xl font-bold">{project.title}</h1>
+          <div className="flex flex-row items-center gap-4">
+            <div className="flex">
+              <LinkButton
+                icon={FaGithub}
+                url={project.github}
+                disabled={!project.github}
+              />
+            </div>
+            <p className="font-bold">Tech: {project.techStack?.join(", ")}</p>
           </div>
-          <p className="font-bold">Tech: {project.techStack?.join(", ")}</p>
-        </div>
-        <div className="text-base space-y-4">
-          {project.description
-            .split(/\n\r?/)
-            .map((line: string, index: number) => (
-              <p key={index}>{line}</p>
-            ))}
+          <div className="text-base space-y-4">
+            {project.description
+              .split(/\n\r?/)
+              .map((line: string, index: number) => (
+                <p key={index}>{line}</p>
+              ))}
+          </div>
         </div>
       </div>
     </main>
