@@ -4,7 +4,7 @@ import cycling from "@/public/cycling.jpeg";
 
 export default function About() {
   return (
-    <main className="flex flex-col px-20 py-10 items-center">
+    <main className="flex flex-col px-10 py-10 items-center">
       <div className="flex flex-col w-full max-w-4xl">
         <div className="flex flex-col gap-y-4">
           <h1 className="text-4xl font-bold">About</h1>
