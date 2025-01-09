@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import StackIcon from "../StackIcon";
+import NavDropdown from "./NavDropdown";
 
 export default function Navbar() {
   return (
@@ -37,27 +37,8 @@ export default function Navbar() {
           </ul>
         </div>
 
-        {/* Dropdown menu visible on small screens (sm breakpoint) */}
-        <div className="sm:hidden dropdown dropdown-end">
-          <label tabIndex={0} className="btn btn-ghost btn-circle">
-            <StackIcon />
-          </label>
-          <ul
-            tabIndex={0}
-            className="menu dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <Link href="/about" className="text-lg">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/projects" className="text-lg">
-                Projects
-              </Link>
-            </li>
-          </ul>
-        </div>
+        {/* Mobile dropdown menu */}
+        <NavDropdown />
       </div>
     </nav>
   );
