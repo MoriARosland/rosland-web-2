@@ -13,7 +13,7 @@ export default async function AuthCheck({ children }: Props) {
     redirect("/api/auth/signin");
   }
 
-  if (session.user?.email !== process.env.ADMIN_EMAIL) {
+  if (session.user?.email !== process.env.ADMIN_UID) {
     signOut({ callbackUrl: "/unauthorized" });
     redirect("/unauthorized");
   }
