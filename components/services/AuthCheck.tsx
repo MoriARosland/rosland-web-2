@@ -9,11 +9,13 @@ interface Props {
 export default async function AuthCheck({ children }: Props) {
   const session = await getServerSession();
 
+  const adminUID = process.env.ADMIN_UID;
+
   if (!session) {
     redirect("/api/auth/signin");
   }
 
-  if (session.user?.email !== process.env.ADMIN_UID) {
+  if (session.user?.email !== adminUID) {
     signOut({ callbackUrl: "/unauthorized" });
     redirect("/unauthorized");
   }
