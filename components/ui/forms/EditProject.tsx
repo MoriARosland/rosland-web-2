@@ -5,6 +5,7 @@ import { ObjectId } from "mongodb";
 import { revalidateTag } from "next/cache";
 import { deleteProject } from "@/lib/db/db_actions";
 import { redirect } from "next/navigation";
+import { FormSubmitButton } from "@/components/ui/buttons/FormSubmitButton";
 
 interface Props {
   project: Project;
@@ -115,7 +116,7 @@ export default function EditProject({ project }: Props) {
         />
       </label>
       <div className="flex flex-row gap-4">
-        <button className="btn btn-primary mt-4">Update</button>
+        <FormSubmitButton />
         <button className="btn btn-error mt-4" formAction={handleDelete}>
           DELETE
         </button>
