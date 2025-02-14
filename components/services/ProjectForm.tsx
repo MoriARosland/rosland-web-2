@@ -2,6 +2,7 @@ import Form from "next/form";
 import clientPromise from "@/lib/mongodb";
 import { revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
+import { FormSubmitButton } from "@/components/ui/buttons/FormSubmitButton";
 
 export default async function ProjectForm() {
   async function handleFormSubmit(formData: FormData) {
@@ -89,9 +90,7 @@ export default async function ProjectForm() {
           required
         />
       </label>
-      <button className="btn btn-primary mt-4" type="submit">
-        Add
-      </button>
+      <FormSubmitButton />
     </Form>
   );
 }

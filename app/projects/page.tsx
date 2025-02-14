@@ -7,7 +7,7 @@ export default async function ProjectsPage() {
   const projects: Project[] = await getAllProjects();
 
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col pb-10">
       <h1 className="text-4xl font-bold text-center py-10">Projects</h1>
 
       {projects.length === 0 ? (
