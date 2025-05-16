@@ -26,32 +26,27 @@ export default function About() {
           <div>
             <h2 className="text-xl font-bold">Education</h2>
             <p className="text-md">
-              I&apos;m studying for a master&apos;s in Electronic System Design
-              with a specialization in Digital and Embedded Systems. Time spent
-              programming, is time spent well 🤖.
+              MSc in Electronic System Design (electrical engineering) with a
+              specialization in Digital and Embedded Systems.
             </p>
           </div>
           <div>
             <h2 className="text-xl font-bold">Bio</h2>
-            <p className="text-md">
-              My interests can be rather quickly summarized: competitive sports,
-              programming, and reading. With this, I am a happy human 😌.
-            </p>
+            <p className="text-md">Trying not to be replaced by a robot.</p>
           </div>
           <div>
             <h2 className="text-xl font-bold">Experience / Technical</h2>
             <p className="text-md">
               Most of my programming experience is in <strong>C/C++</strong>{" "}
-              writing firmware for embedded systems. Additionally, in my free
-              time, I have completed multiple projects with{" "}
-              <strong>TypeScript</strong> in <strong>React/Next.js</strong> and{" "}
-              <strong>SvelteKit</strong>.
+              writing firmware for embedded systems. In my free time, I have
+              done a fair share of web development as well, using mostly{" "}
+              <strong>React/Next.js</strong> and <strong>SvelteKit</strong> with{" "}
+              <strong>Typescript</strong> and <strong>Postgres</strong>.
             </p>
             <p className="text-md">
-              Hardware-wise, I have a fair share of experience in{" "}
-              <strong>VHDL</strong>/<strong>System Verilog</strong> (digital
-              design) and some PCB design in <strong>KiCad</strong> and{" "}
-              <strong>Altium</strong>.
+              Hardware-wise, I have experience with <strong>VHDL</strong>/
+              <strong>System Verilog</strong> (digital design) and some PCB
+              design in <strong>KiCad</strong> and <strong>Altium</strong>.
             </p>
           </div>
         </div>
