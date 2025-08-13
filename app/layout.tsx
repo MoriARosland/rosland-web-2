@@ -14,12 +14,7 @@ export const metadata: Metadata = {
   title: "Rosland Web",
   description: "🤖",
   icons: {
-    icon: [
-      {
-        url: "/favicon-dark.ico",
-        media: "(prefers-color-scheme: dark)",
-      },
-    ],
+    icon: "/favicon-dark.ico",
   },
 };
 
@@ -29,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={`${titillium.className} antialiased`}>
         <NavBarWrapper />
         {children}
