@@ -1,8 +1,21 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import NavDropdown from "./NavDropdown";
 
 export default function Navbar() {
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <nav className="navbar font-bold bg-slate-200 dark:bg-base-300 shadow px-4 sm:px-6">
       {/* Navbar start (Brand) */}
@@ -25,12 +38,20 @@ export default function Navbar() {
         <div className="hidden sm:flex">
           <ul className="menu menu-horizontal p-0">
             <li>
-              <Link href="/about" className="text-lg">
+              <Link 
+                href="#about" 
+                className="text-lg"
+                onClick={(e) => handleSmoothScroll(e, "about")}
+              >
                 About
               </Link>
             </li>
             <li>
-              <Link href="/projects" className="text-lg">
+              <Link 
+                href="#projects" 
+                className="text-lg"
+                onClick={(e) => handleSmoothScroll(e, "projects")}
+              >
                 Projects
               </Link>
             </li>
