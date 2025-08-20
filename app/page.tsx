@@ -15,8 +15,9 @@ export default function Home() {
       <div className="flex-1 flex flex-col gap-7 justify-center items-center">
         <TypeWriterHeader text="Hi there, I'm Mori👋" />
         <p className="text-lg text-center px-20">
-          I study Electronic System Design at NTNU with a specialization in
-          digital and embedded systems and am currently in my fourth year.
+          I&apos;m in my final year of studying Electronic System Design at
+          NTNU, specializing in digital and embedded systems, and currently
+          writing my thesis.
         </p>
         <div className="flex flex-row gap-4">
           <NavButton text="Projects" href="/projects" />

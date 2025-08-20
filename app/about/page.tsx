@@ -37,16 +37,21 @@ export default function About() {
           <div>
             <h2 className="text-xl font-bold">Experience / Technical</h2>
             <p className="text-md">
-              Most of my programming experience is in <strong>C/C++</strong>{" "}
-              writing firmware for embedded systems. In my free time, I have
-              done a fair share of web development as well, using mostly{" "}
-              <strong>React/Next.js</strong> and <strong>SvelteKit</strong> with{" "}
-              <strong>Typescript</strong> and <strong>Postgres</strong>.
+              I&apos;ve done extensive proramming in <strong>C/C++</strong>{" "}
+              writing firmware for embedded systems. This includes real-time
+              programming, low-power systems, and some parallel computing. In my
+              free time, I&apos;ve built a variety of full-stack web and mobile
+              applications such as asset trackers to training apps using{" "}
+              <strong>Next.js</strong>, <strong>Postgres</strong>, and{" "}
+              <strong>Flutter</strong>.
             </p>
-            <p className="text-md">
-              Hardware-wise, I have experience with <strong>VHDL</strong>/
-              <strong>System Verilog</strong> (digital design) and some PCB
-              design in <strong>KiCad</strong> and <strong>Altium</strong>.
+            <p className="text-md pt-2">
+              In hardware, I have experience with FPGA and digital design
+              building accelerators in <strong>VHDL</strong>/
+              <strong>Verilog</strong> and verifying these with{" "}
+              <strong>System Verilog</strong>. For PCB design, I have built
+              boards ranging from small passive circuits to power delivery
+              systems and wireless communication systems.
             </p>
           </div>
         </div>
