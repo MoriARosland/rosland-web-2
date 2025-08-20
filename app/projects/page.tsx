@@ -8,7 +8,9 @@ export default async function ProjectsPage() {
 
   return (
     <main className="flex flex-col pb-10">
-      <h1 className="text-4xl font-bold text-center py-10">Projects</h1>
+      <h1 className="text-4xl font-bold text-center py-10">
+        Featured Projects
+      </h1>
 
       {projects.length === 0 ? (
         <p className="text-center text-xl">No projects found</p>
