@@ -49,7 +49,7 @@ export default function About() {
               In hardware, I have experience with FPGA and digital design
               building accelerators in <strong>VHDL</strong>/
               <strong>Verilog</strong> and verifying these with{" "}
-              <strong>System Verilog</strong>. For PCB design, I have built
+              <strong>SystemVerilog/UVM</strong>. For PCB design, I have built
               boards ranging from small passive circuits to power delivery
               systems and wireless communication systems.
             </p>
