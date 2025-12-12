@@ -13,7 +13,7 @@
     "@vercel/analytics": "^1.4.1",
     "@vercel/speed-insights": "^1.1.0",
     "mongodb": "^6.12.0",
-    "next": "^15.2.6",
+    "next": "15.5.9",
     "next-auth": "^4.24.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
